@@ -33,7 +33,7 @@ static const char *fonts[]          = { font };
 // static const char urg_bg[] = "#3F4040";
 // static const char urg_border[] = "#3F4040";
 //
-#include "/home/zanzon/.cache/wal/colors-wal-dwm.h"
+#include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"
 // static const char *colors[][3]      = {
 //     /*               fg           bg         border                         */
 //     [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
