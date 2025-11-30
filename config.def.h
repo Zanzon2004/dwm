@@ -33,6 +33,7 @@ static const char *fonts[]          = { font };
 // static const char urg_bg[] = "#3F4040";
 // static const char urg_border[] = "#3F4040";
 //
+/*this line is for pywal useage, if you don't use it remove and uncomment the color defentitions and array*/
 #include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"
 // static const char *colors[][3]      = {
 //     /*               fg           bg         border                         */
