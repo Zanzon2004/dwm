@@ -34,8 +34,7 @@ cd dwm
 
 2. Set colors:
 Open config.def.h in your editor.
-if you are using pywal put your username in `#include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"`, if not, just
-delete this line and apply your custom colorscheme using hexcolors.
+if you are using pywal put your username in `#include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"`, if not, just delete this line and apply your custom colorscheme using hexcolors.
 
 3. Compile and install
 make clean install
