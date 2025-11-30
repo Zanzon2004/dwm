@@ -37,4 +37,6 @@ Open config.def.h in your editor.
 if you are using pywal put your username in `#include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"`, if not, just delete this line and apply your custom colorscheme using hexcolors.
 
 3. Compile and install
-make clean install
+make install clean
+
+4. key bindings are managed through sxhkd [https://wiki.archlinux.org/title/Sxhkd]. This is cleaner and more efficient to avoid a hectic config file.  
