@@ -13,34 +13,42 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 // static const int splitstatus        = 0;        /* 1 for split status items */
 // static const char *splitdelim        = ";";       /* Character used for separating status */
-static char font[]          = "monospace:size=14";
+static char font[]          = "Fira Code:size=15";
 static char dmenufont[]       = "monospace:size=14";
 
-static unsigned int baralpha        = 0xE6U;
-static unsigned int borderalpha     = 0x99U;
+static unsigned int baralpha    = 0xBFU;
+static unsigned int borderalpha = 0x33U;
 
 static const char *fonts[]          = { font };
 
-// static const char norm_fg[] = "#cacaca";
-// static const char norm_bg[] = "#121110";
-// static const char norm_border[] = "#8d8d8d";
+
+#include "/home/zanzon/.cache/wal/colors-wal-dwm.h"
+
+// static char norm_fg[] = "#cacaca";
+// static char norm_bg[] = "#121110";
+// static char norm_border[] = "#8d8d8d";
 //
-// static const char sel_fg[] = "#cacaca";
-// static const char sel_bg[] = "#504F4E";
-// static const char sel_border[] = "#cacaca";
+// static char sel_fg[] = "#cacaca";
+// static char sel_bg[] = "#504F4E";
+// static char sel_border[] = "#cacaca";
 //
-// static const char urg_fg[] = "#cacaca";
-// static const char urg_bg[] = "#3F4040";
-// static const char urg_border[] = "#3F4040";
-//
-/*this line is for pywal useage, if you don't use it remove and uncomment the color defentitions and array*/
-#include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"
-// static const char *colors[][3]      = {
-//     /*               fg           bg         border                         */
-//     [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
-//     [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
-//     [SchemeUrg] =  { urg_fg,      urg_bg,    urg_border },
-// };
+// static char urg_fg[] = "#cacaca";
+// static char urg_bg[] = "#3F4040";
+// static char urg_border[] = "#3F4040";
+
+static char *colors[][3]      = {
+    /*               fg           bg         border                         */
+    [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
+    [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
+    [SchemeUrg] =  { urg_fg,      urg_bg,    urg_border },
+
+    [SchemeStatus]     = { norm_fg, norm_bg,  "#000000" },  // statusbar text on normal bar background
+    [SchemeTagsSel]    = { sel_fg,  sel_bg,   "#000000" },  // selected tag uses selected scheme
+    [SchemeTagsNorm]   = { norm_fg, norm_bg,  "#000000" },  // unselected tag uses normal scheme
+    [SchemeInfoSel]    = { sel_fg,  norm_bg,  "#000000" },  // selected info: selected fg, normal bg
+    [SchemeInfoNorm]   = { norm_fg, norm_bg,  "#000000" },  // unselected info: normal fg/bg
+
+};
 
 typedef struct {
 	const char *name;
@@ -120,7 +128,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_border, "-sf", sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", "10", "-p", "run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /*
@@ -226,4 +234,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
