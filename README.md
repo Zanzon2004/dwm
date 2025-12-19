@@ -40,12 +40,22 @@ The following patches are included in this build:
 git clone https://github.com/Zanzon2004/dwm.git
 ```
 2. Set colors:
-Open config.def.h in your editor.
+Open `config.def.h` in your editor.
 if you are using [pywal](https://github.com/dylanaraps/pywal) put your username in `#include "/home/<your-user>/.cache/wal/colors-wal-dwm.h"`, if not, just delete this line and apply your custom colorscheme using hexcolors.
 
-3. Compile and install
+3. Install a Nerd Font (Optional):
+If you want icons you have to install a nerd font and modify this part
+```c
+static char font[]          = "0xProto Nerd Font Mono:size=15";
+```
+4. Install a Compositor (Optional):
+For transparency, shadows, and smooth animations, you can use [Picom](https://github.com/yshui/picom)
+
+5. Compile and install
 ```bash
 cd dwm
 make install clean # this needs admin privilege (sudo/doas)
 ```
-5. key bindings are managed through [sxhkd](https://wiki.archlinux.org/title/Sxhkd). This is cleaner and more efficient to avoid a hectic config file. 
+6. key bindings are managed through [sxhkd](https://wiki.archlinux.org/title/Sxhkd). This is cleaner and more efficient to avoid a hectic config file. 
+
+
