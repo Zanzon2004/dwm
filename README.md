@@ -3,7 +3,7 @@
 This is my customized build of [dwm](https://dwm.suckless.org/), a dynamic window manager for X.  
 It includes my preferred patches and configuration for a more functional and aesthetic experience.
 
-![Alt text](./pic-full-251218-0028-36.png)
+![Alt text](./pic-full-251219-2135-33.png)
 
 ---
 
