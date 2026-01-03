@@ -14,11 +14,11 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 // static const int splitstatus        = 0;        /* 1 for split status items */
 // static const char *splitdelim        = ";";       /* Character used for separating status */
-static char font[]          = "0xProto Nerd Font Mono:size=15";
+static char font[]          = "Mononoki Nerd Font Mono:size=16";
 static char dmenufont[]       = "0xProto Nerd Font Mono:size=15";
 
-static unsigned int baralpha    = 0xBFU;
-static unsigned int borderalpha = 0x33U;
+static unsigned int baralpha    = 0xd0;
+static unsigned int borderalpha = OPAQUE;
 
 static const char *fonts[]          = { font };
 
@@ -131,6 +131,8 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+#define STATUSBAR "dwmblocks"
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", "10", "-p", "run", NULL };
@@ -230,7 +232,9 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },

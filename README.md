@@ -21,6 +21,7 @@ The following patches are included in this build:
 7. `dwm-restartsig-20180523-6.2.diff` – Adds support for restarting dwm via a signal without losing your session.  
 8. `dwm-preserveonrestart-6.3.diff` – Preserves window layout and state when restarting dwm.  
 9. `dwm-swallow-6.3.diff` – Enables terminal windows to “swallow” launched child windows, keeping the desktop clean.
+10. `dwm-statuscmd-20210405-67d76bd.diff` - Essential for a clickable status bar.
 
 ### Appearance
 1. `dwm-alpha-20250918-74edc27.diff` – Adds transparency support.  

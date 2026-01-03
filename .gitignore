@@ -1,3 +1,5 @@
 dwm
 *.o
 *.rej
+config.h
+.gitignore
