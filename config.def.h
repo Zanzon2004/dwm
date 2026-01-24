@@ -4,17 +4,17 @@
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
-static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 0;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 0;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static int smartgaps    = 0;        /* 1 means no outer gap when there is only one window */
 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 // static const int splitstatus        = 0;        /* 1 for split status items */
 // static const char *splitdelim        = ";";       /* Character used for separating status */
-static char font[]          = "Mononoki Nerd Font Mono:size=16";
+static char font[]          = "FiraCode Nerd Font Mono Ret:size=14:style=Retina,Regular";
 static char dmenufont[]       = "0xProto Nerd Font Mono:size=15";
 
 static unsigned int baralpha    = 0xd0;
@@ -23,19 +23,19 @@ static unsigned int borderalpha = OPAQUE;
 static const char *fonts[]          = { font };
 
 
-#include "/home/zanzon/.cache/wal/colors-wal-dwm.h"
+// #include "/home/zanzon/.cache/wal/colors-wal-dwm.h"
 
-// static char norm_fg[] = "#cacaca";
-// static char norm_bg[] = "#121110";
-// static char norm_border[] = "#8d8d8d";
-//
-// static char sel_fg[] = "#cacaca";
-// static char sel_bg[] = "#504F4E";
-// static char sel_border[] = "#cacaca";
-//
-// static char urg_fg[] = "#cacaca";
-// static char urg_bg[] = "#3F4040";
-// static char urg_border[] = "#3F4040";
+static char norm_fg[] = "#cacaca";
+static char norm_bg[] = "#121110";
+static char norm_border[] = "#8d8d8d";
+
+static char sel_fg[] = "#cacaca";
+static char sel_bg[] = "#504F4E";
+static char sel_border[] = "#cacaca";
+
+static char urg_fg[] = "#cacaca";
+static char urg_bg[] = "#3F4040";
+static char urg_border[] = "#3F4040";
 
 static char *colors[][3]      = {
     /*               fg           bg         border                         */
