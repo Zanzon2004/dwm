@@ -10,14 +10,17 @@ static const unsigned int gappoh    = 0;       /* horiz outer gap between window
 static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static int smartgaps    = 0;        /* 1 means no outer gap when there is only one window */
 
-static int showbar            = 1;        /* 0 means no bar */
+static int showbar            = 0;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 // static const int splitstatus        = 0;        /* 1 for split status items */
 // static const char *splitdelim        = ";";       /* Character used for separating status */
-static char font[]          = "FiraCode Nerd Font Mono Ret:size=14:style=Retina,Regular";
+static char font[]          = "FiraCode Nerd Font Mono Ret:pixelsize=19:antialias=true:autohint=true";
+// static char font[] = "Monospace:pixelsize=19:antialias=true:autohint=true";
 static char dmenufont[]       = "0xProto Nerd Font Mono:size=15";
 
-static unsigned int baralpha    = 0xd0;
+// static unsigned int baralpha    = 0xd0;
+// static unsigned int borderalpha = OPAQUE;
+static unsigned int baralpha    = 255;
 static unsigned int borderalpha = OPAQUE;
 
 static const char *fonts[]          = { font };
@@ -26,7 +29,7 @@ static const char *fonts[]          = { font };
 // #include "/home/zanzon/.cache/wal/colors-wal-dwm.h"
 
 static char norm_fg[] = "#cacaca";
-static char norm_bg[] = "#121110";
+static char norm_bg[] = "#1E1F20";
 static char norm_border[] = "#8d8d8d";
 
 static char sel_fg[] = "#cacaca";
@@ -43,11 +46,11 @@ static char *colors[][3]      = {
     [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
     [SchemeUrg] =  { urg_fg,      urg_bg,    urg_border },
 
-    [SchemeStatus]     = { norm_fg, norm_bg,  "#000000" },  // statusbar text on normal bar background
-    [SchemeTagsSel]    = { sel_fg,  sel_bg,   "#000000" },  // selected tag uses selected scheme
-    [SchemeTagsNorm]   = { norm_fg, norm_bg,  "#000000" },  // unselected tag uses normal scheme
-    [SchemeInfoSel]    = { sel_fg,  norm_bg,  "#000000" },  // selected info: selected fg, normal bg
-    [SchemeInfoNorm]   = { norm_fg, norm_bg,  "#000000" },  // unselected info: normal fg/bg
+    [SchemeStatus]     = { norm_fg, norm_bg,  norm_bg },  // statusbar text on normal bar background
+    [SchemeTagsSel]    = { sel_fg,  sel_bg,   norm_bg },  // selected tag uses selected scheme
+    [SchemeTagsNorm]   = { norm_fg, norm_bg,  norm_bg },  // unselected tag uses normal scheme
+    [SchemeInfoSel]    = { sel_fg,  norm_bg,  norm_bg },  // selected info: selected fg, normal bg
+    [SchemeInfoNorm]   = { norm_fg, norm_bg,  norm_bg },  // unselected info: normal fg/bg
 
 };
 
@@ -67,7 +70,8 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "" };
+/* tagging */
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "󱀁", "" };
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -81,6 +85,8 @@ static const Rule rules[] = {
     // { NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
     // { NULL,		  "keepassxc",	NULL,		SPTAG(2),		0,			 -1 },	
     { "St",      NULL,      "rmpc",     1 << 8,       0,          0,            1,            0,       -1 },
+    { "St",      NULL,      "newsboat",     1 << 7,       0,          0,            1,            0,       -1 },
+    { NULL,      NULL,      "spotify",     1 << 8,       0,          0,            0,            0,       -1 },
     // { "zen",     "Navigator",    NULL,   1 << 0,     0,         0,              0,            0,  -1 },
     { NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -211,8 +217,8 @@ static const Key keys[] = {
     { MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
     { MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
     { MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
-    { MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-    { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },*/
+    { MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } }, */
+    { MODKEY,    XK_0,      defaultgaps,    {0} },
     { MODKEY,                       XK_a,      togglegaps,     {0} },
 
     /*scratch pads*/

@@ -31,6 +31,7 @@ The following patches are included in this build:
 5. `dwm-vanitygaps-6.2.diff` – Adds customizable gaps between windows.  
 6. `dwm-xresources-20210314.diff` – Allows runtime configuration via Xresources (necessary for pywal).  
 7. `dwm-colorbar-6.3.diff` - Allows different coloring options for each bar component.
+8. `dwm-bidi-restricted-20230512-e81f17d.diff` - Supports RTL languages and depends on [GNU FriBidi](https://github.com/fribidi/fribidi?tab=readme-ov-file) which is an free implementation of the unicode bidirectional algorithm. 
 
 ---
 
